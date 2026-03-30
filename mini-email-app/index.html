@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Email App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Mini Email App</h1>
+    <p class="subtitle">SMTP + IMAP using Netlify Functions and Gmail</p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Send Email</h2>
+        <form id="sendForm">
+          <label for="to">To</label>
+          <input type="email" id="to" placeholder="recipient@gmail.com" required />
+
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Enter subject" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" rows="7" placeholder="Write your email..." required></textarea>
+
+          <button type="submit">Send Email</button>
+        </form>
+        <div id="sendStatus" class="status"></div>
+      </section>
+
+      <section class="card">
+        <div class="header-row">
+          <h2>Inbox</h2>
+          <button id="refreshInboxBtn" type="button">Refresh Inbox</button>
+        </div>
+        <div id="inboxStatus" class="status"></div>
+        <div id="inboxList" class="inbox-list">
+          <p class="muted">No emails loaded yet.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
